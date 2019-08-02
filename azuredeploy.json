@@ -259,7 +259,7 @@
           },
           "fileUris": {
             "value": [
-              "https://vminit.blob.core.chinacloudapi.cn/script/InitBotTimeConsole.ps1"
+              "https://raw.githubusercontent.com/Azuki1029/BotTimeAzArmTemplates/master/InitBotTimeConsole.ps1"
             ]
           },
           "commandToExecute": {
