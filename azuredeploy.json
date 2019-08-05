@@ -207,7 +207,7 @@
             }
           },
           "imageReference": {
-            "id": "/subscriptions/340c4c0a-8f87-4fd1-8e8e-03084e2a6fff/resourceGroups/RgArmTemplateWorkspace/providers/Microsoft.Compute/images/UpdatedEncooConsoleImage"
+            "id": "/subscriptions/340c4c0a-8f87-4fd1-8e8e-03084e2a6fff/resourceGroups/rgupdateimage/providers/Microsoft.Compute/images/EncooConsoleV1"
           }
         },
         "networkProfile": {
