@@ -34,7 +34,7 @@
     "virtualMachineName": "BotTimeConsole",
     "osDiskType": "Premium_LRS",
     "diagnosticsStorageAccountName": "[concat(uniquestring(resourceGroup().id), 'bottimediag')]",
-    "diagnosticsStorageAccountId": "[concat('Microsoft.Storage/storageAccounts', variables('diagnosticsStorageAccountName'))]",
+    "diagnosticsStorageAccountId": "[concat('Microsoft.Storage/storageAccounts/', variables('diagnosticsStorageAccountName'))]",
     "diagnosticsStorageAccountType": "Standard_LRS",
     "diagnosticsStorageAccountKind": "Storage",
     "storageAccountSasTokenRequestContent": {
