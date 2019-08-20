@@ -10,7 +10,7 @@ $imageEndpoint = "http://${Endpoint}:8081";
 systemctl start mysqld
 systemctl start redis
 
-"nohup java -jar /encoo/imageServer.jar --port=8081 --host=${imageEndpoint} --env=privatedeploy &" | Out-File /encoo/startImageServer.sh -Force
+"nohup java -jar /encoo/imageServer.jar --port=8081 --host=${imageEndpoint} --path=/encoo/fileserver &" | Out-File /encoo/startImageServer.sh -Force
 sh /encoo/startImageServer.sh
 
 sh /encoo/start.sh start
