@@ -1,7 +1,7 @@
 ﻿Param
 (
     [Parameter(Mandatory=$true)]
-    [String] $Endpoint
+    [String] $Endpoint,
 
 	[Parameter(Mandatory=$true)]
 	[String] $License
