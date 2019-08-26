@@ -15,6 +15,9 @@
     },
     "dnsLabelPrefix": {
       "type": "string"
+    },
+    "license": {
+      "type": "string"
     }
   },
   "variables": {
@@ -263,7 +266,7 @@
             ]
           },
           "commandToExecute": {
-            "value": "[concat('curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo; sudo yum install -y powershell; sudo pwsh -f InitBotTimeConsole.ps1 -Endpoint ', parameters('dnsLabelPrefix'), '.', resourceGroup().location, '.cloudapp.chinacloudapi.cn')]"
+            "value": "[concat('curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo; sudo yum install -y powershell; sudo pwsh -f InitBotTimeConsole.ps1 -Endpoint ', parameters('dnsLabelPrefix'), '.', resourceGroup().location, '.cloudapp.chinacloudapi.cn -License ', parameters('license'))]"
           }
         }
       },
