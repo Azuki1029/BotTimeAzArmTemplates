@@ -20,11 +20,11 @@
         "options": {
           "hideDiskTypeFilter": false
         },
-        "osPlatform": "Linux",
+        "osPlatform": "Windows",
         "imageReference": {
-          "publisher": "encootech",
-          "offer": "bottime",
-          "sku": "v1"
+          "publisher": "MicrosoftWindowsServer",
+          "offer": "WindowsServer",
+          "sku": "2012-R2-Datacenter"
         },
         "count": 1,
         "visible": true
