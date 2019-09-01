@@ -5,27 +5,37 @@
   "parameters": {
     "basics": [
       {
-        "name": "adminPassword",
-        "type": "Microsoft.Common.PasswordBox",
+        "name": "dnsLabelPrefix",
+        "type": "Microsoft.Network.PublicIpAddressCombo",
         "label": {
-          "password": "Password",
-          "confirmPassword": "Confirm password"
+          "publicIpAddress": "Public IP address",
+          "domainNameLabel": "Domain name label"
         },
-        "toolTip": "",
+        "toolTip": {
+          "publicIpAddress": "",
+          "domainNameLabel": ""
+        },
         "constraints": {
-          "required": true,
-          "regex": "",
-          "validationMessage": ""
+          "required": {
+            "domainNameLabel": true
+          }
+        },
+        "defaultValue": {
+          "publicIpAddressName": "BotTimePublicIP",
+          "domainNameLabel": "bottimeconsole"
         },
         "options": {
-          "hideConfirmation": false
+          "hideNone": false,
+          "hideDomainNameLabel": false,
+          "hideExisting": false,
+          "zone": 3
         },
         "visible": true
       }
     ],
     "steps": [],
     "outputs": {
-      "adminUsername": "[basics('adminPassword')]"
+      "adminUsername": "[basics('dnsLabelPrefix')]"
     }
   }
 }
