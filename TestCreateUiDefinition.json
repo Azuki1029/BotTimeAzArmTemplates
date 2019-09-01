@@ -5,37 +5,34 @@
   "parameters": {
     "basics": [
       {
-        "name": "dnsLabelPrefix",
-        "type": "Microsoft.Network.PublicIpAddressCombo",
-        "label": {
-          "publicIpAddress": "Public IP address",
-          "domainNameLabel": "Domain name label"
-        },
-        "toolTip": {
-          "publicIpAddress": "",
-          "domainNameLabel": ""
-        },
+        "name": "virtualMachineSize",
+        "type": "Microsoft.Compute.SizeSelector",
+        "label": "虚拟机大小",
+        "toolTip": "",
+        "recommendedSizes": [
+          "Standard_B2s",
+          "Standard_B2ms"
+        ],
         "constraints": {
-          "required": {
-            "domainNameLabel": true
-          }
-        },
-        "defaultValue": {
-          "publicIpAddressName": "BotTimePublicIP",
-          "domainNameLabel": "bottimeconsole"
+          "numAvailabilityZonesRequired": 1,
+          "zone": "3"
         },
         "options": {
-          "hideNone": false,
-          "hideDomainNameLabel": false,
-          "hideExisting": false,
-          "zone": 3
+          "hideDiskTypeFilter": false
         },
+        "osPlatform": "Linux",
+        "imageReference": {
+          "publisher": "encootech",
+          "offer": "bottime",
+          "sku": "v1"
+        },
+        "count": 1,
         "visible": true
       }
     ],
     "steps": [],
     "outputs": {
-      "adminUsername": "[basics('dnsLabelPrefix')]"
+      "adminUsername": "[basics('virtualMachineSize')]"
     }
   }
 }

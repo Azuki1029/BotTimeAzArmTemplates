@@ -20,7 +20,14 @@
         "options": {
           "hideDiskTypeFilter": false
         },
-        "osPlatform": "Linux"
+        "osPlatform": "Linux",
+        "imageReference": {
+          "publisher": "encootech",
+          "offer": "bottime",
+          "sku": "v1"
+        },
+        "count": 1,
+        "visible": true
       },
       {
         "name": "adminUsername",
@@ -56,31 +63,12 @@
       },
       {
         "name": "dnsLabelPrefix",
-        "type": "Microsoft.Network.PublicIpAddressCombo",
-        "label": {
-          "publicIpAddress": "Public IP address",
-          "domainNameLabel": "Domain name label"
-        },
-        "toolTip": {
-          "publicIpAddress": "",
-          "domainNameLabel": ""
-        },
+        "type": "Microsoft.Common.TextBox",
+        "label": "Domain name label",
+        "toolTip": "",
         "constraints": {
-          "required": {
-            "domainNameLabel": true
-          }
-        },
-        "defaultValue": {
-          "publicIpAddressName": "BotTimePublicIP",
-          "domainNameLabel": "bottimeconsole"
-        },
-        "options": {
-          "hideNone": false,
-          "hideDomainNameLabel": false,
-          "hideExisting": false,
-          "zone": 3
-        },
-        "visible": true
+          "required": true
+        }
       },
       {
         "name": "license",
