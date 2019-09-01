@@ -10,11 +10,10 @@
         "label": "虚拟机大小",
         "toolTip": "",
         "recommendedSizes": [
-          "Standard_B2s"
+          "Standard_B2s",
+          "Standard_B2ms"
         ],
         "constraints": {
-          "allowedSizes": [],
-          "excludedSizes": [],
           "numAvailabilityZonesRequired": 1,
           "zone": "3"
         },
