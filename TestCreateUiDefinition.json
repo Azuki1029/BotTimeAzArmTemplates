@@ -11,17 +11,7 @@
         "toolTip": "",
         "recommendedSizes": [
           "Standard_B2s"
-        ],
-        "constraints": {
-          "allowedSizes": [],
-          "excludedSizes": [],
-          "numAvailabilityZonesRequired": 1,
-          "zone": "3"
-        },
-        "options": {
-          "hideDiskTypeFilter": false
-        },
-        "osPlatform": "Linux"
+        ]
       }
     ],
     "steps": [],
