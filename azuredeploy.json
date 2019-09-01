@@ -11,7 +11,7 @@
       "defaultValue": "bottimeadmin"
     },
     "adminPassword": {
-      "type": "securestring"
+      "type": "string"
     },
     "dnsLabelPrefix": {
       "type": "string"

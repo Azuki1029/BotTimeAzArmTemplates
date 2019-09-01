@@ -5,31 +5,6 @@
   "parameters": {
     "basics": [
       {
-        "name": "virtualMachineSize",
-        "type": "Microsoft.Compute.SizeSelector",
-        "label": "虚拟机大小",
-        "toolTip": "",
-        "recommendedSizes": [
-          "Standard_B2s",
-          "Standard_B2ms"
-        ],
-        "constraints": {
-          "numAvailabilityZonesRequired": 1,
-          "zone": "3"
-        },
-        "options": {
-          "hideDiskTypeFilter": false
-        },
-        "osPlatform": "Linux",
-        "imageReference": {
-          "publisher": "encootech",
-          "offer": "bottime",
-          "sku": "v1"
-        },
-        "count": 1,
-        "visible": true
-      },
-      {
         "name": "adminUsername",
         "type": "Microsoft.Compute.UserNameTextBox",
         "label": "虚拟机管理员用户名",
@@ -47,10 +22,10 @@
         "name": "adminPassword",
         "type": "Microsoft.Common.PasswordBox",
         "label": {
-          "password": "Password",
-          "confirmPassword": "Confirm password"
+          "password": "虚拟机管理员密码",
+          "confirmPassword": "确认密码"
         },
-        "toolTip": "",
+        "toolTip": "用以登录虚拟机",
         "constraints": {
           "required": true,
           "regex": "",
@@ -64,9 +39,11 @@
       {
         "name": "dnsLabelPrefix",
         "type": "Microsoft.Common.TextBox",
-        "label": "Domain name label",
+        "label": "公网域名前缀",
+        "defaultValue": "",
         "toolTip": "",
         "constraints": {
+          "regex": "^[a-z0-9]{1,30}$",
           "required": true
         }
       },
@@ -74,18 +51,56 @@
         "name": "license",
         "type": "Microsoft.Common.TextBox",
         "label": "BotTime License",
+        "defaultValue": "",
         "toolTip": "",
         "constraints": {
           "required": true
         }
       }
     ],
-    "steps": [],
+    "steps": [
+      {
+        "name": "setVmSize",
+        "label": "虚拟机配置",
+        "subLabel": {
+          "preValidation": "配置虚拟机大小",
+          "postValidation": "完成"
+        },
+        "elements": [
+          {
+            "name": "virtualMachineSize",
+            "type": "Microsoft.Compute.SizeSelector",
+            "label": "虚拟机大小",
+            "toolTip": "",
+            "recommendedSizes": [
+              "Standard_B2s",
+              "Standard_B2ms"
+            ],
+            "constraints": {
+              "excludedSizes": [],
+              "numAvailabilityZonesRequired": 3,
+              "zone": "3"
+            },
+            "options": {
+              "hideDiskTypeFilter": false
+            },
+            "osPlatform": "Linux",
+            "imageReference": {
+              "publisher": "encootech",
+              "offer": "bottime",
+              "sku": "v1"
+            },
+            "count": 1,
+            "visible": true
+          }
+        ]
+      }
+    ],
     "outputs": {
-      "virtualMachineSize": "[basics('virtualMachineSize')]",
+      "virtualMachineSize": "[steps('setVmSize').virtualMachineSize]",
       "adminUsername": "[basics('adminUsername')]",
       "adminPassword": "[basics('adminPassword')]",
-      "dnsLabelPrefix": "[basics('dnsLabelPrefix').domainNameLabel]",
+      "dnsLabelPrefix": "[basics('dnsLabelPrefix')]",
       "license": "[basics('license')]"
     }
   }
