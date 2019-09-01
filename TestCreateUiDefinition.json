@@ -26,11 +26,6 @@
     ],
     "steps": [],
     "outputs": {
-      "virtualMachineSize": "[basics('virtualMachineSize')]",
-      "adminUsername": "[basics('adminUsername')]",
-      "adminPassword": "[basics('adminPassword')]",
-      "dnsLabelPrefix": "[basics('dnsLabelPrefix').domainNameLabel]",
-      "license": "[basics('license')]"
-    }
+      "virtualMachineSize": "[basics('virtualMachineSize')]"
   }
 }
