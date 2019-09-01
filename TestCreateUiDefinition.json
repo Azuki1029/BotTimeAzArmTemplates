@@ -5,17 +5,23 @@
   "parameters": {
     "basics": [
       {
-        "name": "virtualMachineSize",
-        "type": "Microsoft.Compute.SizeSelector",
-        "label": "虚拟机大小",
-        "toolTip": "",
-        "recommendedSizes": [
-          "Standard_B2s"
-        ]
+        "name": "adminUsername",
+        "type": "Microsoft.Compute.UserNameTextBox",
+        "label": "虚拟机管理员用户名",
+        "toolTip": "用以登录虚拟机",
+        "defaultValue": "bottimeadmin",
+        "constraints": {
+          "required": true,
+          "regex": "^[a-z0-9A-Z]{1,30}$",
+          "validationMessage": "Only alphanumeric characters are allowed, and the value must be 1-30 characters long."
+        },
+        "osPlatform": "Linux",
+        "visible": true
       }
     ],
     "steps": [],
     "outputs": {
-      "virtualMachineSize": "[basics('virtualMachineSize')]"
+      "adminUsername": "[basics('adminUsername')]"
+    }
   }
 }
