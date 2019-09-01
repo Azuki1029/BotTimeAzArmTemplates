@@ -5,6 +5,17 @@
   "parameters": {
     "basics": [
       {
+        "name": "dnsLabelPrefix",
+        "type": "Microsoft.Common.TextBox",
+        "label": "Domain name label",
+        "toolTip": "",
+        "constraints": {
+          "required": true
+        }
+      }
+    ],
+    "steps": [
+      {
         "name": "virtualMachineSize",
         "type": "Microsoft.Compute.SizeSelector",
         "label": "虚拟机大小",
@@ -31,9 +42,9 @@
         "visible": true
       }
     ],
-    "steps": [],
     "outputs": {
-      "adminUsername": "[basics('virtualMachineSize')]"
+      "adminUsername": "[basics('virtualMachineSize')]",
+      "dnsLabelPrefix": "[basics('dnsLabelPrefix').domainNameLabel]"
     }
   }
 }
