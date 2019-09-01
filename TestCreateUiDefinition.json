@@ -14,6 +14,7 @@
           "Standard_B2ms"
         ],
         "constraints": {
+          "excludedSizes": [],
           "numAvailabilityZonesRequired": 1,
           "zone": "3"
         },
