@@ -15,7 +15,8 @@
         ],
         "constraints": {
           "excludedSizes": [],
-          "numAvailabilityZonesRequired": 1
+          "numAvailabilityZonesRequired": 3,
+          "zone": "3"
         },
         "options": {
           "hideDiskTypeFilter": false
