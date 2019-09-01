@@ -5,23 +5,27 @@
   "parameters": {
     "basics": [
       {
-        "name": "adminUsername",
-        "type": "Microsoft.Compute.UserNameTextBox",
-        "label": "虚拟机管理员用户名",
-        "toolTip": "用以登录虚拟机",
-        "defaultValue": "bottimeadmin",
+        "name": "adminPassword",
+        "type": "Microsoft.Common.PasswordBox",
+        "label": {
+          "password": "Password",
+          "confirmPassword": "Confirm password"
+        },
+        "toolTip": "",
         "constraints": {
           "required": true,
-          "regex": "^[a-z0-9A-Z]{1,30}$",
-          "validationMessage": "Only alphanumeric characters are allowed, and the value must be 1-30 characters long."
+          "regex": "",
+          "validationMessage": ""
         },
-        "osPlatform": "Linux",
+        "options": {
+          "hideConfirmation": false
+        },
         "visible": true
       }
     ],
     "steps": [],
     "outputs": {
-      "adminUsername": "[basics('adminUsername')]"
+      "adminUsername": "[basics('adminPassword')]"
     }
   }
 }

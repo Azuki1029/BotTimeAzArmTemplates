@@ -5,6 +5,24 @@
   "parameters": {
     "basics": [
       {
+        "name": "virtualMachineSize",
+        "type": "Microsoft.Compute.SizeSelector",
+        "label": "虚拟机大小",
+        "toolTip": "",
+        "recommendedSizes": [
+          "Standard_B2s",
+          "Standard_B2ms"
+        ],
+        "constraints": {
+          "numAvailabilityZonesRequired": 1,
+          "zone": "3"
+        },
+        "options": {
+          "hideDiskTypeFilter": false
+        },
+        "osPlatform": "Linux"
+      },
+      {
         "name": "adminUsername",
         "type": "Microsoft.Compute.UserNameTextBox",
         "label": "虚拟机管理员用户名",
@@ -76,6 +94,7 @@
     ],
     "steps": [],
     "outputs": {
+      "virtualMachineSize": "[basics('virtualMachineSize')]",
       "adminUsername": "[basics('adminUsername')]",
       "adminPassword": "[basics('adminPassword')]",
       "dnsLabelPrefix": "[basics('dnsLabelPrefix').domainNameLabel]",
