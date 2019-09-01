@@ -8,8 +8,10 @@
         "name": "dnsLabelPrefix",
         "type": "Microsoft.Common.TextBox",
         "label": "Domain name label",
+        "defaultValue": "",
         "toolTip": "",
         "constraints": {
+          "regex": "^[a-z0-9]{1,30}$",
           "required": true
         }
       }
